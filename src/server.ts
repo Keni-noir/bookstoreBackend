@@ -2,7 +2,7 @@ import 'dotenv/config.js';
 import express from "express";
 import bookStoreRoute from "./routes/bookRoute.js"
 import authRoute from "./routes/authRoutes.js"
-import externalApiRoute from "./routes/externalApiRoute.ts"
+import externalApiRoute from "./routes/externalApiRoute.js"
 import { config } from 'dotenv';
 import { connectDB, disconnectDB } from './config/db.js';
 import cors from "cors";

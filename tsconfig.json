@@ -11,9 +11,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
-    "allowJs": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "allowJs": true
   },
   "ts-node": {
     "esm": true
