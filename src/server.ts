@@ -14,7 +14,10 @@ const app = express();
 connectDB()
 app.use(cors({
     origin: ["http://localhost:5173", "https://bookstore-frontend-amber.vercel.app/login"],
+
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 app.use(express.json());
