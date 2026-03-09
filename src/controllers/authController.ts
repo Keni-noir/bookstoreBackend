@@ -13,6 +13,13 @@ const signUp = async (req: Request, res: Response) =>{
     if (existingUser) {
             return res.status(404).json({message:"User already exist with this email"})
         }
+    const normalizedUsername = username.toLowerCase();
+    const existingUserName = await prisma.user.findUnique({
+        where: {username: normalizedUsername},
+    })
+    if (existingUserName) {
+        return res.status(400).json({message:"User already exist with this username"})
+    }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     const user = await prisma.user.create({
